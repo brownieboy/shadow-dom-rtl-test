@@ -17,9 +17,24 @@
 
   <h2>Plain HTML</h2>
   <h3>Input Text Box</h3>
-  Plain input: <input class="textinput" />
+  <input class="textinput" value="test" />
 
   <script src="./main.js"></script>
+  <script src="./components.js"></script>
+  <br /><br />
+  <h2>Custom Web Component (No Shadow DOM)</h2>
+  <h3>Input Text Box</h3>
+  <my-custom-component></my-custom-component>
+
+  <br /><br />
+  <h2>Custom Web Component (open Shadow DOM)</h2>
+  <h3>Input Text Box</h3>
+  <my-open-shadow-custom-component></my-open-shadow-custom-component>
+
+  <br /><br />
+  <h2>Custom Web Component (closed Shadow DOM)</h2>
+  <h3>Input Text Box</h3>
+  <my-closed-shadow-custom-component></my-closed-shadow-custom-component>
 </body>
 
 </html>
