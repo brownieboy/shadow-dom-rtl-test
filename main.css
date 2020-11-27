@@ -1,4 +1,26 @@
+.body {
+  margin: 10px;
+}
+
 .textinput {
   width: 200px;
 }
 
+.labeldiv {
+  width: 90%;
+  border: 1px red solid;
+  padding: 10px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+
+.labeldiv span {
+  position: absolute;
+  left: 20px;
+  right: auto;
+}
+
+[dir="rtl"] .labeldiv span {
+  right: 20px;
+  left: auto;
+}

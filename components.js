@@ -4,8 +4,8 @@ class MyCustomComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    console.log('connectedCallback');
-    this.innerHTML = '<input type="text" class="textinput" value="test" />';
+    this.innerHTML = `<div class="labeldiv"><span>Fake floating label</span></div>
+    <input type="text" class="textinput" value="test" />`;
   }
 }
 
@@ -23,7 +23,14 @@ class MyOpenShadowCustomComponent extends HTMLElement {
     textInput.value = "test";
     textInput.type = "text";
     textInput.classList.add("textinput");
+    const fakeFloatingLabelDiv = document.createElement("div");
+    fakeFloatingLabelDiv.classList.add("labeldiv");
+    const fakeFloatingLabelSpan = document.createElement("span");
+    fakeFloatingLabelSpan.innerHTML = "Fake floating label";
+    fakeFloatingLabelDiv.appendChild(fakeFloatingLabelSpan);
+    this.shadow.appendChild(fakeFloatingLabelDiv);
     this.shadow.appendChild(textInput);
+
   }
 }
 
