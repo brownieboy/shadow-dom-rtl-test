@@ -1,3 +1,22 @@
+
+const labelDivCss = `.labeldiv {
+  width: 90%;
+  border: 1px red solid;
+  padding: 10px;
+  height: 20px;
+  margin-bottom: 10px;
+}
+.labeldiv span {
+  position: absolute;
+  left: 20px;
+  right: auto;
+}
+  [dir="rtl"] .labeldiv span {
+    right: 20px;
+    left: auto;
+ }`;
+
+// No Shadow DOM
 class MyCustomComponent extends HTMLElement {
   constructor() {
     super();
@@ -12,6 +31,7 @@ class MyCustomComponent extends HTMLElement {
 window.customElements.define('my-custom-component', MyCustomComponent);
 
 
+// Custom Coponent with Open Shadow DOM
 class MyOpenShadowCustomComponent extends HTMLElement {
   constructor() {
     super();
@@ -28,6 +48,10 @@ class MyOpenShadowCustomComponent extends HTMLElement {
     const fakeFloatingLabelSpan = document.createElement("span");
     fakeFloatingLabelSpan.innerHTML = "Fake floating label";
     fakeFloatingLabelDiv.appendChild(fakeFloatingLabelSpan);
+
+    const style = document.createElement("style");
+    style.textContent = labelDivCss;
+    this.shadowRoot.append(style, fakeFloatingLabelDiv);
     this.shadow.appendChild(fakeFloatingLabelDiv);
     this.shadow.appendChild(textInput);
 
@@ -36,6 +60,7 @@ class MyOpenShadowCustomComponent extends HTMLElement {
 
 window.customElements.define('my-open-shadow-custom-component', MyOpenShadowCustomComponent);
 
+// Custom component with Closed Shadow DOM
 class MyClosedShadowCustomComponent extends HTMLElement {
   constructor() {
     super();
