@@ -19,11 +19,6 @@ window.customElements.define('my-custom-component', MyCustomComponent);
 class MyShadowCustomComponent extends HTMLElement {
   constructor() {
     super();
-//     const template = document.getElementById("inputWithFloatingLabel");
-// const templateContent = template.content;
-//     console.log("TCL ~ file: component.js ~ line 45 ~ templateContent", templateContent);
-//     this.shadow.append({mode: 'open'})
-//     .appendChild(templateContent.cloneNode(true));
   }
 
 
@@ -60,8 +55,9 @@ class MyShadowCustomComponent extends HTMLElement {
     // fakeFloatingLabelSpan.innerHTML = "Fake floating label";
     // fakeFloatingLabelDiv.appendChild(fakeFloatingLabelSpan);
 
-    // const style = document.createElement("style");
-    // style.textContent = labelDivCss;
+    const style = document.createElement("style");
+    style.textContent = labelDivCss;
+    this.shadowRoot.append(style);
     // this.shadowRoot.append(style, fakeFloatingLabelDiv);
     // this.shadow.appendChild(fakeFloatingLabelDiv);
     // this.shadow.appendChild(textInput);
