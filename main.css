@@ -7,8 +7,9 @@
 }
 
 .labeldiv {
-  width: 90%;
+  width: 99%;
   border: 1px red solid;
+  position: relative;
   padding: 10px;
   height: 20px;
   margin-bottom: 10px;
@@ -16,6 +17,7 @@
 
 .labeldiv span {
   position: absolute;
+  top: 2px;
   left: 20px;
   right: auto;
 }
