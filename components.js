@@ -1,23 +1,3 @@
-
-const labelDivCss = `.labeldiv {
-  width: 99%;
-  position: relative;
-  border: 1px red solid;
-  padding: 10px;
-  height: 20px;
-  margin-bottom: 10px;
-}
-.labeldiv span {
-  position: absolute;
-  top: 2px;
-  left: 20px;
-  right: auto;
-}
- [dir="rtl"] .labeldiv span, .labeldiv[dir="rtl"] span {
-    right: 20px;
-    left: auto;
- }`;
-
 // No Shadow DOM
 class MyCustomComponent extends HTMLElement {
   constructor() {
