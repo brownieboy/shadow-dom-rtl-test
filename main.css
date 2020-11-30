@@ -8,7 +8,7 @@ body {
 
 .labeldiv {
   width: 99%;
-  border: 1px red solid;
+  border: 1px grey dotted;
   position: relative;
   padding: 10px;
   height: 20px;

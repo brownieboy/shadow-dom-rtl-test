@@ -24,7 +24,7 @@ class MyShadowCustomComponent extends HTMLElement {
     const labelDivCss = `.labeldiv {
       width: 99%;
       position: relative;
-      border: 1px red solid;
+      border: 1px grey dotted;
       padding: 10px;
       height: 20px;
       margin-bottom: 10px;
@@ -60,15 +60,15 @@ class MyShadowCustomComponentNewLabel extends HTMLElement {
     const labelDivCss = `.labeldiv {
       width: 99%;
       position: relative;
-      border: 1px red solid;
+      border: 1px grey dotted;
       padding: 10px;
       height: 20px;
       margin-bottom: 10px;
     }
-    .labelDivWrapper {
+    .labeldiv span {
       position: absolute;
+      /* Look!  No left or right positioning!!! */
       top: 2px;
-      width: 100%;
     }`;
     this.shadow = this.attachShadow({ mode: 'open' });
     this.shadow.appendChild(templateContent.cloneNode(true));
