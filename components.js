@@ -7,11 +7,10 @@ class MyCustomComponent extends HTMLElement {
   }
 
   connectedCallback() {
-    this.innerHTML = `<div class="labeldiv"><span>Fake floating label</span></div>
-    <input type="text" class="textinput" value="test" />`;
+    // // No Shadow DOM here.
+    this.appendChild(templateContent.cloneNode(true));
   }
 }
-
 window.customElements.define('my-custom-component', MyCustomComponent);
 
 
@@ -20,7 +19,6 @@ class MyShadowCustomComponent extends HTMLElement {
   constructor() {
     super();
   }
-
 
   connectedCallback() {
     const labelDivCss = `.labeldiv {
@@ -45,22 +43,9 @@ class MyShadowCustomComponent extends HTMLElement {
      this.shadow = this.attachShadow({ mode: 'open' });
      this.shadow.appendChild(templateContent.cloneNode(true));
 
-    // const textInput = document.createElement("input");
-    // textInput.value = "test";
-    // textInput.type = "text";
-    // textInput.classList.add("textinput");
-    // const fakeFloatingLabelDiv = document.createElement("div");
-    // fakeFloatingLabelDiv.classList.add("labeldiv");
-    // const fakeFloatingLabelSpan = document.createElement("span");
-    // fakeFloatingLabelSpan.innerHTML = "Fake floating label";
-    // fakeFloatingLabelDiv.appendChild(fakeFloatingLabelSpan);
-
     const style = document.createElement("style");
     style.textContent = labelDivCss;
     this.shadowRoot.append(style);
-    // this.shadowRoot.append(style, fakeFloatingLabelDiv);
-    // this.shadow.appendChild(fakeFloatingLabelDiv);
-    // this.shadow.appendChild(textInput);
   }
 }
 
@@ -86,24 +71,11 @@ class MyShadowCustomComponentNewLabel extends HTMLElement {
       width: 100%;
     }`;
     this.shadow = this.attachShadow({ mode: 'open' });
-    const textInput = document.createElement("input");
-    textInput.value = "test";
-    textInput.type = "text";
-    textInput.classList.add("textinput");
-    const fakeFloatingLabelDiv = document.createElement("div");
-    fakeFloatingLabelDiv.classList.add("labeldiv");
-    const floatingLabelDivWrapper = document.createElement("div");
-    floatingLabelDivWrapper.classList.add("labelDivWrapper");
-    fakeFloatingLabelDiv.appendChild(floatingLabelDivWrapper);
-    const fakeFloatingLabelSpan = document.createElement("span");
-    fakeFloatingLabelSpan.innerHTML = "Fake floating label";
-    floatingLabelDivWrapper.appendChild(fakeFloatingLabelSpan);
+    this.shadow.appendChild(templateContent.cloneNode(true));
 
-    const style = document.createElement("style");
-    style.textContent = labelDivCss;
-    this.shadowRoot.append(style, fakeFloatingLabelDiv);
-    this.shadow.appendChild(fakeFloatingLabelDiv);
-    this.shadow.appendChild(textInput);
+   const style = document.createElement("style");
+   style.textContent = labelDivCss;
+   this.shadowRoot.append(style);
   }
 }
 

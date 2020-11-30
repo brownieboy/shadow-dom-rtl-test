@@ -11,7 +11,7 @@
 <body>
   <h1>Shadow DOM RTL Test</h1>
 
-  Language direction:<br />
+  Language direction (sets dir attribute on DOM's body tag):<br />
   <input type="radio" id="ltr" name="dirpropradio" value="ltr" checked><label for="ltr">Left to right</label><br />
   <input type="radio" id="rtl" name="dirpropradio" value="rtl"><label for="rtl">Right to left</label><br>
 
@@ -21,23 +21,28 @@
   </template>
 
   <h2>Plain HTML</h2>
-  <!-- <h3>Input Text Box</h3> -->
+  <p>Floating label's rtl works because global CSS has effect.  Absolutely positioned left normally, or right when dir="rtl" is set on DOM's body tag.</p>
   <div id="mainHtmlVersion"></div>
+  <br />
+  <hr />
+  <br />
 
-
-  <br /><br />
   <h2>Custom Element (No Shadow DOM)</h2>
-  <h3>Input Text Box</h3>
+  <p>Floating label's rtl works because global CSS has effect, same as for Plain HTML (see previous).</p>
   <my-custom-component></my-custom-component>
-
-  <br /><br />
-  <h2>Custom Web Component (Shadow DOM)</h2>
-  <h3>Input Text Box</h3>
+  <br />
+  <br />
+  <hr />
+  <br />
+  <h2>Web Component (Shadow DOM)</h2>
+  <p>Floating label's rtl fails.  It stays left because the global CSS has no effect in Shadow DOM.  The CSS that is set here withing the Shadow DOM (i.e. [dir="rtl"]) also fails, because CSS inside a Shadow DOM cannot read the dir prop that was set outside of it.</p>
   <my-shadow-custom-component></my-shadow-custom-component>
 
-  <br /><br />
+  <br />
+  <hr />
+  <br />
   <h2>Custom Web Component (Shadow DOM) Redesigned Label</h2>
-  <h3>Input Text Box</h3>
+  <p>Floating label's rtl works because it is not using absolute positioning for left or right.   It has a wrapper that uses absolute positioning for top, but inside that, the browser takes care of rtl.</p>
   <my-shadow-custom-component-new-label></my-shadow-custom-component-new-label>
   <script src="./main.js"></script>
   <script src="./components.js"></script>

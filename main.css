@@ -1,9 +1,9 @@
-.body {
-  margin: 10px;
+body {
+  padding: 10px;
 }
 
 .textinput {
-  width: 200px;
+  width: 300px;
 }
 
 .labeldiv {
