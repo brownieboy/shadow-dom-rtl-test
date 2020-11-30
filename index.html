@@ -15,13 +15,16 @@
   <input type="radio" id="ltr" name="dirpropradio" value="ltr" checked><label for="ltr">Left to right</label><br />
   <input type="radio" id="rtl" name="dirpropradio" value="rtl"><label for="rtl">Right to left</label><br>
 
-  <h2>Plain HTML</h2>
-  <h3>Input Text Box</h3>
-  <div class="labeldiv"><span>Fake floating label</span></div>
-  <input class="textinput" value="test" />
+  <template id="inputWithFloatingLabel">
+    <div class="labeldiv"><span>Floating label</span></div>
+    <input class="textinput" value="my test text" />
+  </template>
 
-  <script src="./main.js"></script>
-  <script src="./components.js"></script>
+  <h2>Plain HTML</h2>
+  <!-- <h3>Input Text Box</h3> -->
+  <div id="mainHtmlVersion"></div>
+
+
   <br /><br />
   <h2>Custom Web Component (No Shadow DOM)</h2>
   <h3>Input Text Box</h3>
@@ -36,7 +39,8 @@
   <h2>Custom Web Component (Shadow DOM) Redesigned Label</h2>
   <h3>Input Text Box</h3>
   <my-shadow-custom-component-new-label></my-shadow-custom-component-new-label>
-
+  <script src="./main.js"></script>
+  <script src="./components.js"></script>
 </body>
 
 </html>

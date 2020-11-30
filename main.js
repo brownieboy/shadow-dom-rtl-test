@@ -8,3 +8,8 @@ rtlRadioElem.forEach(elem => {
     bodyElement.setAttribute("dir", value);
   });
 });
+
+const template = document.getElementById("inputWithFloatingLabel");
+const templateContent = template.content;
+console.log("TCL ~ file: main.js ~ line 14 ~ templateContent", templateContent);
+document.getElementById("mainHtmlVersion").appendChild(templateContent.cloneNode(true));
