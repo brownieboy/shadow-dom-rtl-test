@@ -22,7 +22,7 @@
     position: relative;
     padding: 10px;
     height: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 10px
   }
 
   .labeldiv span {
@@ -44,7 +44,7 @@
 
   <h2>Plain HTML</h2>
   <h4>Global CSS Works!</h4>
-  <p>Floating label's rtl works because global CSS has effect. It's absolutely positioned left normally, or right when
+  <p>Floating label's rtl works because global CSS classes have effect. It's absolutely positioned left normally, or right when
     dir="rtl" is set on DOM's body tag.</p>
   <div id="mainHtmlVersion"></div>
   <br />
@@ -53,7 +53,7 @@
 
   <h2>Custom Element (No Shadow DOM)</h2>
   <h4>Global CSS Still Works!</h4>
-  <p>Floating label's rtl works because global CSS still has effect when there's no Shadow DOM, same as for Plain HTML
+  <p>Floating label's rtl works because global CSS classes still have effect when there's no Shadow DOM, same as for Plain HTML
     (see previous).</p>
   <my-custom-component></my-custom-component>
   <br />
@@ -80,7 +80,7 @@
       right: 20px;
       left: auto;
    }`;</textarea>
-  <p>Floating label's rtl fails. It stays left because the global CSS has no effect in Shadow DOM. Note that we're setting CSS
+  <p>Floating label's rtl fails. It stays left because the global CSS classes have no effect in Shadow DOM. Note that we're setting CSS
     <i>inside</i> the Shadow DOM to do the same thing but that fails too because CSS inside a Shadow DOM cannot see a <code>dir</code> prop
     that was set outside of it.</p>
   <my-shadow-custom-component></my-shadow-custom-component>
