@@ -43,6 +43,7 @@
   </template>
 
   <h2>Plain HTML</h2>
+  <h4>Global CSS Works!</h4>
   <p>Floating label's rtl works because global CSS has effect. It's absolutely positioned left normally, or right when
     dir="rtl" is set on DOM's body tag.</p>
   <div id="mainHtmlVersion"></div>
@@ -51,6 +52,7 @@
   <br />
 
   <h2>Custom Element (No Shadow DOM)</h2>
+  <h4>Global CSS Still Works!</h4>
   <p>Floating label's rtl works because global CSS still has effect when there's no Shadow DOM, same as for Plain HTML
     (see previous).</p>
   <my-custom-component></my-custom-component>
@@ -87,7 +89,7 @@
   <hr />
   <br />
   <h2>Custom Web Component (Shadow DOM) Redesigned Label</h2>
-  <h4>CSS Within Shadow DOM - Works!</h4>
+  <h4>Not Forcing Left/Right Via CSS - Works!</h4>
   <textarea disabled style="width:300px; height:220px">const labelDivCss = `.labeldiv {
     width: 99%;
     position: relative;
